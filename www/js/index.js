@@ -3,19 +3,33 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 
 var users = {
-    "pepe": "pepe123",
-    "lola": "lola123",
+    "pepe": {
+        "name": "pepe",
+        "lastName": "gonzalez",
+        "email": "pepe@gmail.com",
+        "password": "pepe123"
+    },
+    "lola": {
+        "name": "lola",
+        "lastName": "gonzalez",
+        "email": "lola@gmail.com",
+        "password": "lola123"
+    }
 };
 
 function check_login() {
     var user = document.getElementById("username").value;
     var pass = document.getElementById("pass").value;
 
-    if (users[user] == pass) {
+    if (users[user]["password"] == pass) {
         alert("Bravo u r in")
     } else {
         alert("wrong!!");
     }
+}
+
+function change_view() {
+    location.href = "register.html";
 }
 
 function onDeviceReady() {
@@ -24,5 +38,5 @@ function onDeviceReady() {
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
 
     var login_button = document.getElementById("loginButton").onclick = check_login;
-
+    var register_button = document.getElementById("registerButton").onclick = change_view;
 }
