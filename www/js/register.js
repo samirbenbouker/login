@@ -22,13 +22,14 @@ function check_register() {
     } else {
         // add user values
         /*
-        users[username] = {
-            "name": name,
-            "lastName": lastName,
-            "email": email,
-            "password": pass
-        };
-        */
+        username: {
+                "name": name,
+                "lastName": lastName,
+                "email": email,
+                "password": pass
+            }
+            */
+        //localStorage.set("")
         alert("User " + username + " register successful");
 
         location.href = "index.html";
@@ -38,3 +39,5 @@ function check_register() {
 
 //console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
 var registerButton = document.getElementById("registerButton").onclick = check_register;
+
+//var users = JSON.parse(localStorage.getItem("users"));
